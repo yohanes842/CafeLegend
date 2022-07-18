@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CafeLegend</string>
+    <string name="login_btn">Login</string>
+    <string name="password_hint">Password (must be alphanumeric)</string>
+    <string name="username_hint">Username (5-20 characters)</string>
+    <string name="cafe_legend_logo">Cafe Legend Logo</string>
+</resources>
