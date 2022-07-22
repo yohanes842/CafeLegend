@@ -3,36 +3,25 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/overflowMenu"
-        android:icon="@drawable/ic_sidemenu"
-        android:title="test"
-        app:showAsAction="always">
-        <menu>
-            <item
-                android:id="@+id/nav_home"
-                android:icon="@drawable/ic_home"
-                android:title="Home"
-                app:showAsAction="ifRoom"
-                />
-            <item
-                android:id="@+id/nav_items"
-                android:icon="@drawable/ic_items"
-                android:title="Items"
-                app:showAsAction="ifRoom"
-                />
-            <item
-                android:id="@+id/nav_find_us"
-                android:icon="@drawable/ic_find_us"
-                android:title="Find Us"
-                app:showAsAction="ifRoom"
-                />
-            <item
-                android:id="@+id/nav_log_out"
-                android:icon="@drawable/ic_log_out"
-                android:title="Log Out"
-                app:showAsAction="ifRoom"
-                />
-        </menu>
-    </item>
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home"
+            android:iconTint="@color/cream"
+            />
+        <item
+            android:id="@+id/nav_items"
+            android:icon="@drawable/ic_items"
+            android:title="Items"
+            />
+        <item
+            android:id="@+id/nav_find_us"
+            android:icon="@drawable/ic_find_us"
+            android:title="Find Us"
+            />
+        <item
+            android:id="@+id/nav_log_out"
+            android:icon="@drawable/ic_log_out"
+            android:title="Log Out"
+            />
 </menu>
