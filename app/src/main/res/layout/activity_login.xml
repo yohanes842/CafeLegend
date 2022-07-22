@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@color/bg_app"
+    android:background="@color/cream"
     tools:context=".LoginActivity">
 
     <RelativeLayout
@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="@color/bg_app"
+        android:background="@color/cream"
         android:translationZ="1dp"
         >
 
@@ -55,7 +55,7 @@
                 android:textColor="@color/black"
                 android:hint="@string/username_hint"
                 android:textColorHint="@color/hint"
-                android:textSize="17dp"
+                android:textSize="17sp"
                 android:inputType="text"
                 android:layout_marginTop="12dp"
                 android:paddingVertical="7dp"
@@ -88,7 +88,7 @@
                 android:ems="10"
                 android:hint="@string/password_hint"
                 android:textColorHint="@color/hint"
-                android:textSize="17dp"
+                android:textSize="17sp"
                 android:textColor="@color/black"
                 android:inputType="textPassword"
                 android:layout_marginTop="12dp"

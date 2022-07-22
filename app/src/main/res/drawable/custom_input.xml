@@ -3,7 +3,7 @@
 
     <item android:state_enabled="true" android:state_focused="true">
         <shape android:shape="rectangle">
-            <solid android:color="@color/bg_input_login_focus"/>
+            <solid android:color="@color/brown_opc30"/>
             <corners android:radius="10dp"/>
             <stroke android:width="2dp" android:color="@color/brown"/>
         </shape>
@@ -11,7 +11,7 @@
 
     <item android:state_enabled="true" android:state_focused="false">
         <shape android:shape="rectangle">
-            <solid android:color="@color/bg_input_login" />
+            <solid android:color="@color/brown_opc15" />
             <corners android:radius="10dp"/>
         </shape>
     </item>
