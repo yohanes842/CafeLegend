@@ -6,7 +6,7 @@
     <item
         android:id="@+id/overflowMenu"
         android:icon="@drawable/ic_sidemenu"
-        android:title=""
+        android:title="test"
         app:showAsAction="always">
         <menu>
             <item
