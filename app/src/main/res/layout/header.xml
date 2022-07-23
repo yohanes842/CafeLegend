@@ -13,16 +13,15 @@
         android:layout_height="87dp"
         android:src="@drawable/logo"
         android:paddingHorizontal="7dp"
-        />
+        android:contentDescription="@string/app_name"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cafe Legend"
+        android:text="@string/app_name"
         android:textSize="20sp"
         android:fontFamily="casual"
         android:textStyle="bold"
-        android:textFontWeight="900"
         android:gravity="center"
         android:textColor="@color/brown"
         />

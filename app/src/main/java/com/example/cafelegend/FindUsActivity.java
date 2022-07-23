@@ -1,51 +1,68 @@
 package com.example.cafelegend;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
-public class FindUsActivity extends AppCompatActivity {
+import com.google.android.material.navigation.NavigationView;
 
+public class FindUsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    DrawerLayout drawerLayout;
+    NavigationView navView;
+    Toolbar toolbar;
+    Bundle extras;
+    String username;
+
+    void init(){
+        drawerLayout = findViewById(R.id.drawerLayout);
+        navView = findViewById(R.id.navView);
+        toolbar = findViewById(R.id.toolbar);
+
+        extras = getIntent().getExtras();
+        username = extras.getString("username");
+    }
+
+    void setupDrawer(){
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
+                R.string.open_drawer, R.string.close_drawer);
+
+        drawerLayout.addDrawerListener(toggle);
+
+        toggle.syncState();
+        navView.setNavigationItemSelectedListener(this);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_us);
+
+        init();
+        setupDrawer();
     }
 
-    //Menu Inflater at top right side
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_home, menu);
-        return true;
-    }
-
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Intent intent;
 
         switch(item.getItemId()){
             case R.id.nav_home:
                 intent = new Intent(this, HomeActivity.class);
+                intent.putExtra("username", username);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.nav_items:
                 intent = new Intent(this, ItemsActivity.class);
-                startActivity(intent);
-                finish();
-                break;
-            case R.id.nav_find_us:
-                intent = new Intent(this, FindUsActivity.class);
+                intent.putExtra("username", username);
                 startActivity(intent);
                 finish();
                 break;
@@ -60,6 +77,6 @@ public class FindUsActivity extends AppCompatActivity {
             default:
         }
 
-        return super.onOptionsItemSelected(item);
+        return false;
     }
 }

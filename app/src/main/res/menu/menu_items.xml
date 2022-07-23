@@ -4,9 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
         <item
-            android:id="@+id/nav_items"
-            android:icon="@drawable/ic_items"
-            android:title="@string/nav_items"
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/nav_home"
+            android:iconTint="@color/cream"
             />
         <item
             android:id="@+id/nav_find_us"

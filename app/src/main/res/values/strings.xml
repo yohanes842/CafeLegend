@@ -1,9 +1,13 @@
 <resources>
-    <string name="app_name">CafeLegend</string>
+    <string name="app_name">Cafe Legend</string>
     <string name="login_btn">Login</string>
     <string name="password_hint">Password (must be alphanumeric)</string>
     <string name="username_hint">Username (5-20 characters)</string>
     <string name="cafe_legend_logo">Cafe Legend Logo</string>
     <string name="open_drawer">Open Drawer</string>
     <string name="close_drawer">Close Drawer</string>
+    <string name="nav_items">Items</string>
+    <string name="nav_find_us">Find Us</string>
+    <string name="nav_log_out">Log Out</string>
+    <string name="nav_home">Home</string>
 </resources>
