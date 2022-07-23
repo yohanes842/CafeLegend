@@ -35,6 +35,7 @@
         app:menu="@menu/menu_home"
         android:layout_gravity="start"
         android:elevation="4dp"
+        android:theme="@style/Toolbar"
         app:itemIconTint="@color/dark_brown"
         />
 
