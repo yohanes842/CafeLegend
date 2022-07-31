@@ -1,49 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/login_page"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:background="@color/cream"
-    tools:context=".FindUsActivity">
-
-<!--        <menu xmlns:android="http://schemas.android.com/apk/res/android">-->
-
-<!--                <item-->
-<!--                    android:id="@+id/nav_home"-->
-<!--                    android:icon="@drawable/ic_home"-->
-<!--                    android:title="@string/nav_home"-->
-<!--                    />-->
-<!--                <item-->
-<!--                    android:id="@+id/nav_items"-->
-<!--                    android:icon="@drawable/ic_items"-->
-<!--                    android:title="@string/nav_items"-->
-<!--                    />-->
-<!--                <item-->
-<!--                    android:id="@+id/nav_log_out"-->
-<!--                    android:icon="@drawable/ic_log_out"-->
-<!--                    android:title="@string/nav_log_out"-->
-<!--                    />-->
-<!--        </menu>-->
-<!--        -->
-        <RelativeLayout
-            android:id="@+id/landing_page"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:background="@color/cream"
-            android:translationZ="1dp"
-            >
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:contentDescription="@string/app_name"
-                    android:src="@drawable/logo" />
-
-        </RelativeLayout>
-
-
-</RelativeLayout>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/nav_home"
+            />
+        <item
+            android:id="@+id/nav_items"
+            android:icon="@drawable/ic_items"
+            android:title="@string/nav_items"
+            />
+        <item
+            android:id="@+id/nav_log_out"
+            android:icon="@drawable/ic_log_out"
+            android:title="@string/nav_log_out"
+            />
+</menu>

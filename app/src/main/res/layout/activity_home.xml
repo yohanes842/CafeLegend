@@ -34,8 +34,10 @@
         app:headerLayout="@layout/header"
         app:menu="@menu/menu_home"
         android:layout_gravity="start"
-        android:elevation="4dp"
+        android:elevation="40dp"
         app:itemIconTint="@color/dark_brown"
+        app:itemIconSize="31dp"
+        android:backgroundTint="@color/cream"
         />
 
 </androidx.drawerlayout.widget.DrawerLayout>

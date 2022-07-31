@@ -10,4 +10,5 @@
     <string name="nav_find_us">Find Us</string>
     <string name="nav_log_out">Log Out</string>
     <string name="nav_home">Home</string>
+    <string name="menu">Menu</string>
 </resources>
