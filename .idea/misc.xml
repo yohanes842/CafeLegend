@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Fransisca Cicilia/CAWU 5/Lab UX/ProjectKelompok/CafeLegend/app/src/main/res/drawable/rounded_button.xml" value="0.125" />
+        <entry key="..\:/Fransisca Cicilia/CAWU 5/Lab UX/ProjectKelompok/CafeLegend/app/src/main/res/layout/activity_find_us.xml" value="0.1828125" />
+        <entry key="..\:/Fransisca Cicilia/CAWU 5/Lab UX/ProjectKelompok/CafeLegend/app/src/main/res/layout/activity_home.xml" value="0.1483636312185242" />
+        <entry key="..\:/Fransisca Cicilia/CAWU 5/Lab UX/ProjectKelompok/CafeLegend/app/src/main/res/layout/activity_items.xml" value="0.1828125" />
+        <entry key="..\:/Fransisca Cicilia/CAWU 5/Lab UX/ProjectKelompok/CafeLegend/app/src/main/res/layout/toolbar.xml" value="0.1828125" />
+        <entry key="..\:/Fransisca Cicilia/CAWU 5/Lab UX/ProjectKelompok/CafeLegend/app/src/main/res/menu/menu_find_us.xml" value="0.1828125" />
+        <entry key="..\:/Fransisca Cicilia/CAWU 5/Lab UX/ProjectKelompok/CafeLegend/app/src/main/res/menu/menu_items.xml" value="0.1828125" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
