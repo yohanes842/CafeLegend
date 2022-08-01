@@ -29,7 +29,6 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:src="@drawable/logo"
-                    android:layout_marginEnd="10dp"
                     android:layout_gravity="center"
                     android:contentDescription="@string/app_name"/>
                 <TextView
@@ -41,20 +40,38 @@
                     />
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="10px"/>
+                    android:layout_height="15px"/>
 
                 <TextView
                     android:id="@+id/welcome_TV"
                     android:layout_width="321dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Legend Group Corp. is one of Indonesia's largest restaurant company, operating 50 different restaurants and cafés, in over 1500 locations accross the nation.
-        \n\nOne of the most developed and famous café they own is Café Legend, located in Jenderal Sudirman Street, SCBD, South Jakarta.
-        \n\nCafé Legend brings a touch of artistic style to South Jakarta's fashionable neighbourhood that provides a casual but homely ambience for enjoying the comforting flavors of both Western and Asian dishes.
-        \n\nCafé Legend App is a simple mobile app owned by Legend Group Corp. to facilitate the customers in ordering menu at Café Legend.
-        "
+                    android:text="@string/about_us"
                     android:textColor="@color/black"
                     android:textSize="21sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"/>
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_instagram"
+                            android:layout_marginEnd="10dp"
+                            android:layout_gravity="center"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Instagram"/>
+
+
+
+
             </LinearLayout>
 <!--        </ScrollView>-->
     </LinearLayout>
