@@ -15,7 +15,9 @@
         <include layout="@layout/toolbar"/>
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingBottom="50dp"
+            >
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -44,11 +46,74 @@
                     android:id="@+id/welcome_TV"
                     android:layout_width="321dp"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:gravity="left"
+                    android:justificationMode="inter_word"
                     android:text="@string/about_us"
                     android:textColor="@color/black"
-                    android:textSize="21sp" />
+                    android:textSize="18sp" />
 
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left">
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_instagram"
+                            android:layout_marginEnd="10dp"
+                            android:layout_gravity="center">
+                        </ImageView>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="\@CaféLegend"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_whatsapp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_gravity="center">
+                        </ImageView>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0812-1122-2233"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_location"
+                            android:layout_marginEnd="10dp"
+                            android:layout_gravity="center">
+                        </ImageView>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Jenderal Sudirman Street Number 15A-C, SCBD, South Jakarta"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"/>
+                    </LinearLayout>
+                </LinearLayout>
 
             </LinearLayout>
         </ScrollView>
