@@ -12,8 +12,14 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cafelegend.adapter.HomeAdapter;
+import com.example.cafelegend.model.Food;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.Vector;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -23,6 +29,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     TextView welcomeMessageTV;
     Bundle extras;
     String username;
+
+    RecyclerView rvFood;
+    Vector<Food> foodVector;
+    HomeAdapter adapter;
 
     void init(){
         welcomeMessageTV = findViewById(R.id.welcome_TV);
@@ -57,6 +67,23 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         init();
         setWelcomeMessage();
         setupDrawer();
+
+        rvFood = findViewById(R.id.home_food);
+        loadData();
+
+        adapter = new HomeAdapter(this);
+        adapter.setFoodVector(foodVector);
+        rvFood.setAdapter(adapter);
+        rvFood.setLayoutManager(new GridLayoutManager(this, 2));
+
+    }
+
+    private void loadData() {
+        foodVector = new Vector<>();
+        foodVector.add(new Food("Menu1", "Ini desc", 12000, R.drawable.menu1));
+        foodVector.add(new Food("Menu2", "Ini desc", 12000, R.drawable.menu2));
+        foodVector.add(new Food("Menu3", "Ini desc", 12000, R.drawable.menu3));
+        foodVector.add(new Food("Menu4", "Ini desc", 12000, R.drawable.menu4));
     }
 
     @Override
