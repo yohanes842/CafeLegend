@@ -31,6 +31,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     String username;
 
     RecyclerView rvFood;
+    RecyclerView rvDrink;
     Vector<Food> foodVector;
     HomeAdapter adapter;
 
@@ -74,17 +75,31 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         adapter = new HomeAdapter(this);
         adapter.setFoodVector(foodVector);
         rvFood.setAdapter(adapter);
-        rvFood.setLayoutManager(new GridLayoutManager(this, 2));
+        rvFood.setLayoutManager(new GridLayoutManager(this, 3));
+
+        rvDrink = findViewById(R.id.home_drink);
+        loadData2();
+        adapter = new HomeAdapter(this);
+        adapter.setFoodVector(foodVector);
+        rvDrink.setAdapter(adapter);
+        rvDrink.setLayoutManager(new GridLayoutManager(this, 3));
 
     }
 
     private void loadData() {
         foodVector = new Vector<>();
-        foodVector.add(new Food("Menu1", "Ini desc", 12000, R.drawable.menu1));
-        foodVector.add(new Food("Menu2", "Ini desc", 12000, R.drawable.menu2));
-        foodVector.add(new Food("Menu3", "Ini desc", 12000, R.drawable.menu3));
-        foodVector.add(new Food("Menu4", "Ini desc", 12000, R.drawable.menu4));
+        foodVector.add(new Food("Warm Cheese Box Bites", "Ini desc", 12000, R.drawable.menu1));
+        foodVector.add(new Food("Smoked Beef Quiche", "Ini desc", 12000, R.drawable.menu2));
+        foodVector.add(new Food("Beef Sausage & Cheese Croissant", "Ini desc", 12000, R.drawable.menu3));
     }
+
+    private void loadData2() {
+        foodVector = new Vector<>();
+        foodVector.add(new Food("Menu1", "Ini desc", 123, R.drawable.menu1));
+        foodVector.add(new Food("Menu2", "Ini desc", 333, R.drawable.menu2));
+        foodVector.add(new Food("Menu3", "Ini desc", 555, R.drawable.menu3));
+    }
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
