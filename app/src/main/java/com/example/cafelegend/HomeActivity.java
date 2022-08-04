@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,8 +46,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     ImageButton next, previous;
     ViewFlipper imageFlipper;
 
-    int i=0;
-    private int[] imgArray = {R.drawable.menu1, R.drawable.menu2, R.drawable.menu3};
+    //card
+    CardView cardItem;
+
+//    int i=0;
+//    private int[] imgArray = {R.drawable.menu1, R.drawable.menu2, R.drawable.menu3};
 
     void init(){
         welcomeMessageTV = findViewById(R.id.welcome_TV);
@@ -103,14 +107,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         previous = findViewById(R.id.ib_previous);
         next = findViewById(R.id.ib_next);
 
+//        cardItem = findViewById(R.id.cv_item);
+
         previous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if(i == 0){
-//                    i = imgArray.length - 1;
-//                }
-//                imageView.setImageResource(imgArray[i]);
-//                i--;
                 imageFlipper.showPrevious();
             }
         });
@@ -118,14 +119,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if(i == imgArray.length - 1){
-//                    i = 0;
-//                }
-//                imageView.setImageResource(imgArray[i]);
-//                i++;
                 imageFlipper.showNext();
             }
         });
+
+//        cardItem.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(HomeActivity.this, ItemsActivity.class));
+//            }
+//        });
 
     }
 
