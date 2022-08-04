@@ -4,8 +4,13 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -34,6 +39,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     RecyclerView rvDrink;
     Vector<Food> foodVector;
     HomeAdapter adapter;
+
+//    carousel
+    ImageView imageView;
+    ImageButton next, previous;
+    ViewFlipper imageFlipper;
+
+    int i=0;
+    private int[] imgArray = {R.drawable.menu1, R.drawable.menu2, R.drawable.menu3};
 
     void init(){
         welcomeMessageTV = findViewById(R.id.welcome_TV);
@@ -83,6 +96,36 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         adapter.setFoodVector(foodVector);
         rvDrink.setAdapter(adapter);
         rvDrink.setLayoutManager(new GridLayoutManager(this, 3));
+
+//        carousel
+//        imageView = findViewById(R.id.iv_home);
+        imageFlipper = findViewById(R.id.vf_home);
+        previous = findViewById(R.id.ib_previous);
+        next = findViewById(R.id.ib_next);
+
+        previous.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                if(i == 0){
+//                    i = imgArray.length - 1;
+//                }
+//                imageView.setImageResource(imgArray[i]);
+//                i--;
+                imageFlipper.showPrevious();
+            }
+        });
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                if(i == imgArray.length - 1){
+//                    i = 0;
+//                }
+//                imageView.setImageResource(imgArray[i]);
+//                i++;
+                imageFlipper.showNext();
+            }
+        });
 
     }
 
