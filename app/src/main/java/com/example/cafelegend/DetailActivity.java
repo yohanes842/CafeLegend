@@ -72,8 +72,14 @@ public class DetailActivity extends AppCompatActivity {
         order_btn.setOnClickListener(x -> {
             String quantity = quantity_ET.getText().toString();
             if(quantity.isEmpty()){
-                createDialog();
+                createDialog("Quantity can not be empty");
                 return;
+            } else{
+                int int_quantity = Integer.parseInt(quantity);
+                if(int_quantity <= 0){
+                    createDialog("Quantity must be greater than 0");
+                    return;
+                }
             }
 
             Intent intent = new Intent(this, ItemsActivity.class);
@@ -91,12 +97,12 @@ public class DetailActivity extends AppCompatActivity {
         });
     }
 
-    void createDialog(){
+    void createDialog(String msg){
         // Create the object of AlertDialog Builder class
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         // Set the message
-        builder.setMessage("Quantity can not be empty");
+        builder.setMessage(msg);
 
         // Set Cancelable false
         builder.setCancelable(false);
