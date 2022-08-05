@@ -3,6 +3,8 @@ package com.example.cafelegend;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -24,10 +26,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.cafelegend.adapter.HomeAdapter;
 import com.example.cafelegend.model.Food;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayout;
 
+import java.io.Serializable;
 import java.util.Vector;
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, HomeAdapter.OnEventListener {
 
     DrawerLayout drawerLayout;
     NavigationView navView;
@@ -38,10 +42,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     RecyclerView rvFood;
     RecyclerView rvDrink;
-    Vector<Food> foodVector;
-    HomeAdapter adapter;
+    Vector<Food> foodVector, drinkVector;
+    HomeAdapter foodAdapter, drinkAdapter;
 
-//    carousel
+    //    carousel
     ImageView imageView;
     ImageButton next, previous;
     ViewFlipper imageFlipper;
@@ -77,31 +81,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         welcomeMessageTV.setText("Welcome, "+ username);
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-
-        init();
-        setWelcomeMessage();
-        setupDrawer();
-
-        rvFood = findViewById(R.id.home_food);
-        loadData();
-
-        adapter = new HomeAdapter(this);
-        adapter.setFoodVector(foodVector);
-        rvFood.setAdapter(adapter);
-        rvFood.setLayoutManager(new GridLayoutManager(this, 3));
-
-        rvDrink = findViewById(R.id.home_drink);
-        loadData2();
-        adapter = new HomeAdapter(this);
-        adapter.setFoodVector(foodVector);
-        rvDrink.setAdapter(adapter);
-        rvDrink.setLayoutManager(new GridLayoutManager(this, 3));
-
-//        carousel
+    void setupCarousel(){
+        //        carousel
 //        imageView = findViewById(R.id.iv_home);
         imageFlipper = findViewById(R.id.vf_home);
         previous = findViewById(R.id.ib_previous);
@@ -129,23 +110,49 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 //                startActivity(new Intent(HomeActivity.this, ItemsActivity.class));
 //            }
 //        });
+    }
 
+    void initRecycler(){
+        rvFood = findViewById(R.id.home_food);
+        loadData();
+
+        foodAdapter = new HomeAdapter(this, foodVector, this);
+        rvFood.setAdapter(foodAdapter);
+        rvFood.setLayoutManager(new GridLayoutManager(this, 3));
+
+        rvDrink = findViewById(R.id.home_drink);
+        loadData2();
+
+        drinkAdapter = new HomeAdapter(this, drinkVector, this);
+        rvDrink.setAdapter(drinkAdapter);
+        rvDrink.setLayoutManager(new GridLayoutManager(this, 3));
     }
 
     private void loadData() {
         foodVector = new Vector<>();
-        foodVector.add(new Food("Warm Cheese Box Bites", "Ini desc", 12000, R.drawable.menu1));
+        foodVector.add(new Food("Warm Cheese Box Bites", "Tangy goat cheese and crispy baguette slices are the ideal canvas for this comforting yet light take on bruschetta.", 12000, R.drawable.menu1));
         foodVector.add(new Food("Smoked Beef Quiche", "Ini desc", 12000, R.drawable.menu2));
         foodVector.add(new Food("Beef Sausage & Cheese Croissant", "Ini desc", 12000, R.drawable.menu3));
     }
 
     private void loadData2() {
-        foodVector = new Vector<>();
-        foodVector.add(new Food("Menu1", "Ini desc", 123, R.drawable.menu1));
-        foodVector.add(new Food("Menu2", "Ini desc", 333, R.drawable.menu2));
-        foodVector.add(new Food("Menu3", "Ini desc", 555, R.drawable.menu3));
+        drinkVector = new Vector<>();
+        drinkVector.add(new Food("Menu1", "Ini desc", 123, R.drawable.menu1));
+        drinkVector.add(new Food("Menu2", "Ini desc", 333, R.drawable.menu2));
+        drinkVector.add(new Food("Menu3", "Ini desc", 555, R.drawable.menu3));
     }
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
+
+        init();
+        setWelcomeMessage();
+        setupDrawer();
+        setupCarousel();
+        initRecycler();
+    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -176,5 +183,17 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
 
         return false;
+    }
+
+    @Override
+    public void onCardClick(int position) {
+        Log.d("tag", "Clicked");
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra("foodName", foodVector.get(position).getFoodName());
+        intent.putExtra("foodPrice", foodVector.get(position).getFoodPrice());
+        intent.putExtra("foodDesc", foodVector.get(position).getDescription());
+        intent.putExtra("foodImage", foodVector.get(position).getFoodImage());
+        startActivity(intent);
+        finish();
     }
 }
