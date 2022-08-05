@@ -163,13 +163,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 intent = new Intent(this, ItemsActivity.class);
                 intent.putExtra("username", username);
                 startActivity(intent);
-                finish();
                 break;
             case R.id.nav_find_us:
                 intent = new Intent(this, FindUsActivity.class);
                 intent.putExtra("username", username);
                 startActivity(intent);
-                finish();
                 break;
             case R.id.nav_log_out:
                 intent = new Intent(this, LoginActivity.class);
@@ -177,7 +175,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                         "Log Out Successful",
                         Toast.LENGTH_SHORT).show();
                 startActivity(intent);
-                finish();
                 break;
             default:
         }
@@ -187,13 +184,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onCardClick(int position) {
-        Log.d("tag", "Clicked");
         Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra("username", username);
         intent.putExtra("foodName", foodVector.get(position).getFoodName());
         intent.putExtra("foodPrice", foodVector.get(position).getFoodPrice());
         intent.putExtra("foodDesc", foodVector.get(position).getDescription());
         intent.putExtra("foodImage", foodVector.get(position).getFoodImage());
         startActivity(intent);
-        finish();
     }
 }
