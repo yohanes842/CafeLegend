@@ -20,6 +20,7 @@ import com.example.cafelegend.adapter.HomeAdapter;
 import com.example.cafelegend.model.Food;
 import com.google.android.material.navigation.NavigationView;
 
+import java.math.BigDecimal;
 import java.util.Vector;
 
 public class DetailActivity extends AppCompatActivity {
@@ -31,15 +32,20 @@ public class DetailActivity extends AppCompatActivity {
 
     Bundle extras;
     String username, foodName, foodDesc;
-    int foodPrice, foodImage;
+    long foodPrice;
+    BigDecimal formatPrice;
+    int foodImage;
 
     void init(){
         extras = getIntent().getExtras();
+        Food detail_food = extras.getParcelable("food");
+
         username = extras.getString("username");
-        foodName =  extras.getString("foodName");
-        foodPrice =  extras.getInt("foodPrice");
-        foodDesc =  extras.getString("foodDesc");
-        foodImage = extras.getInt("foodImage");
+        foodName =  detail_food.getFoodName();
+        foodPrice =  detail_food.getFoodPrice();
+        formatPrice = new BigDecimal(foodPrice).movePointLeft(3);
+        foodDesc =  detail_food.getDescription();
+        foodImage = detail_food.getFoodImage();
 
         foodName_TV = findViewById(R.id.foodName_TV);
         foodPrice_TV = findViewById(R.id.foodPrice_TV);
@@ -51,7 +57,7 @@ public class DetailActivity extends AppCompatActivity {
 
         foodImage_IV.setImageDrawable(this.getDrawable(foodImage));
         foodName_TV.setText(foodName);
-        foodPrice_TV.setText("Rp. " + String.valueOf(foodPrice) + ",-");
+        foodPrice_TV.setText("Rp. " + String.valueOf(formatPrice) + ",-");
         foodDesc_TV.setText(foodDesc);
 
         setEventListener();
