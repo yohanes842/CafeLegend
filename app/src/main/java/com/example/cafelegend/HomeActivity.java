@@ -130,16 +130,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     private void loadData() {
         foodVector = new Vector<>();
-        foodVector.add(new Food("Warm Cheese Box Bites", "Tangy goat cheese and crispy baguette slices are the ideal canvas for this comforting yet light take on bruschetta.", 12000, R.drawable.menu1));
-        foodVector.add(new Food("Smoked Beef Quiche", "Ini desc", 12000, R.drawable.menu2));
-        foodVector.add(new Food("Beef Sausage & Cheese Croissant", "Ini desc", 12000, R.drawable.menu3));
+        foodVector.add(new Food("Asparagus Ribbon Crostini", "Serving ribbons of asparagus on top of baguette slices turns it from a side dish into a spring-ready finger food. Fresh mint helps make it even more colorful.", 35000, R.drawable.asparagus_ribbon_crostini));
+        foodVector.add(new Food("Warm Cheese Box Bites", "Move over cheese straws! These cheesy bites aren't quite crackers, puffs, or straws. They are just as tasty though.", 21000, R.drawable.warm_cheese_box_bites));
+        foodVector.add(new Food("Grilled Chicken With Fresh Cherry Salsa", "Juicy grilled chicken breasts, topped with a delicious ruby-red cherry salsa, made from the season’s best local cherries. Quick, easy and super yummy, this the ultimate summer plate!", 49000, R.drawable.grilled_chicken));
     }
-
     private void loadData2() {
         drinkVector = new Vector<>();
-        drinkVector.add(new Food("Menu1", "Ini desc", 123, R.drawable.menu1));
-        drinkVector.add(new Food("Menu2", "Ini desc", 333, R.drawable.menu2));
-        drinkVector.add(new Food("Menu3", "Ini desc", 555, R.drawable.menu3));
+        drinkVector.add(new Food("Iced caramel Macchiato", "We combine our rich, full-bodied espresso with vanilla-flavored syrup, milk and ice, then top it off with a caramel drizzle for an oh-so-sweet finish.", 35000, R.drawable.iced_caramel_macchiato));
+        drinkVector.add(new Food("Iced Latte", "Small-lot espresso combined with milk and served over ice creates perfectly handcrafted sips of cool.", 23000, R.drawable.iced_latte));
+        drinkVector.add(new Food("Kiwi-StarFruit Refreshers", "Starfruit- and kiwi-flavored juice and real kiwi fruit pieces shaken with ice. Deliciously refreshing.", 27000, R.drawable.kiwi_starfruit));
     }
 
     @Override
@@ -183,8 +182,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    public void onCardClick(int position) {
+    public void onCardClick(Vector<Food> foodVector, int position) {
         Intent intent = new Intent(this, DetailActivity.class);
+
         intent.putExtra("username", username);
         intent.putExtra("foodName", foodVector.get(position).getFoodName());
         intent.putExtra("foodPrice", foodVector.get(position).getFoodPrice());

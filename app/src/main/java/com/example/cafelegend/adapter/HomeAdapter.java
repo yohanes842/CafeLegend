@@ -74,11 +74,11 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
         @Override
         public void onClick(View v) {
-            onEventListener.onCardClick(getAdapterPosition());
+            onEventListener.onCardClick(foodVector, getAdapterPosition());
         }
     }
 
     public interface OnEventListener{
-        void onCardClick(int position);
+        void onCardClick(Vector<Food> foodVector, int position);
     }
 }
