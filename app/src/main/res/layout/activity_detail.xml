@@ -10,20 +10,18 @@
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/detail_header"
         android:paddingHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp">
-        <ImageView
-            android:layout_width="25.3dp"
+        <Button
+            android:id="@+id/back_btn"
+            android:layout_width="37dp"
             android:layout_height="42.6dp"
-            android:src="@drawable/ic_arrow_back"
-            android:contentDescription="back button"
+            android:background="@drawable/ic_arrow_back"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
-
 
         <ImageView
             android:layout_width="73.3dp"
@@ -83,6 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"/>
     <EditText
+        android:id="@+id/quantity_ET"
         android:layout_width="137dp"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -106,7 +105,7 @@
         android:layout_weight="1"/>
 
     <android.widget.Button
-        android:id="@+id/login_btn"
+        android:id="@+id/order_btn"
         android:layout_width="186dp"
         android:layout_height="53dp"
         android:background="@drawable/rounded_order_button"
