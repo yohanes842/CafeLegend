@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.cafelegend.R;
 import com.example.cafelegend.model.Food;
 
+import java.math.BigDecimal;
 import java.util.Vector;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
@@ -46,8 +47,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull HomeAdapter.ViewHolder holder, int position) {
         Food food = foodVector.get(position);
+        BigDecimal formatPrice = new BigDecimal(food.getFoodPrice()).movePointLeft(3);
         holder.tvfoodname.setText(food.getFoodName());
-        holder.tvfoodprice.setText(food.getFoodPrice()+"");
+        holder.tvfoodprice.setText("Rp. " + formatPrice + ",-");
         holder.img.setImageDrawable(holder.itemView.getContext().getDrawable(food.getFoodImage()));
     }
 

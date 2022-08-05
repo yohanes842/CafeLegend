@@ -8,148 +8,156 @@
     android:background="@color/cream"
     android:orientation="vertical">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="20dp">
+        android:orientation="vertical">
 
         <include
             layout="@layout/toolbar"/>
 
-        <TextView
-            android:id="@+id/welcome_TV"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="20dp"
-            android:text="Welcome, "
-            android:textColor="@color/black"/>
+            >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"/>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_gravity="center"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
-                >
-
-                <ImageButton
-                    android:id="@+id/ib_previous"
-                    android:src="@drawable/ic_previous"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    />
-
-                <ViewFlipper
-                    android:id="@+id/vf_home"
-                    android:autoStart="false"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inAnimation="@android:anim/slide_in_left"
-                    android:outAnimation="@android:anim/slide_out_right"
-                    >
-                    <ImageView
-                        android:id="@+id/iv_home1"
-                        android:src="@drawable/menu1"
-                        android:scaleType="fitXY"
-                        android:layout_width="250dp"
-                        android:layout_height="150dp"
-                        android:layout_gravity="center"/>
-                    <ImageView
-                        android:id="@+id/iv_home2"
-                        android:src="@drawable/menu2"
-                        android:scaleType="fitXY"
-                        android:layout_width="250dp"
-                        android:layout_height="150dp"
-                        android:layout_gravity="center"/>
-                    <ImageView
-                        android:id="@+id/iv_home3"
-                        android:src="@drawable/menu3"
-                        android:scaleType="fitXY"
-                        android:layout_width="250dp"
-                        android:layout_height="150dp"
-                        android:layout_gravity="center"/>
-                </ViewFlipper>
-                <ImageButton
-                    android:id="@+id/ib_next"
-                    android:src="@drawable/ic_next"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
-
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_food"
-                    android:paddingLeft="25dp"
-                    />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Today\'s Food Recommendation"
-                    android:paddingLeft="10dp"
-                    />
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:id="@+id/home_food"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/ic_drink_"
-                android:paddingLeft="20dp"
-                />
+            android:orientation="vertical"
+            android:paddingBottom="57dp"
+            >
 
             <TextView
+                android:id="@+id/welcome_TV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Today\'s Drink Recommendation"
-                android:paddingLeft="5dp"
-                />
+                android:gravity="center"
+                android:textSize="20dp"
+                android:text="Welcome, "
+                android:textColor="@color/dark_brown"/>
 
-        </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    >
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:id="@+id/home_drink"/>
-        </LinearLayout>
-    </ScrollView>
+                    <ImageButton
+                        android:id="@+id/ib_previous"
+                        android:src="@drawable/ic_previous"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <ViewFlipper
+                        android:id="@+id/vf_home"
+                        android:autoStart="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inAnimation="@android:anim/slide_in_left"
+                        android:outAnimation="@android:anim/slide_out_right"
+                        >
+                        <ImageView
+                            android:id="@+id/iv_home1"
+                            android:src="@drawable/menu1"
+                            android:scaleType="fitXY"
+                            android:layout_width="250dp"
+                            android:layout_height="150dp"
+                            android:layout_gravity="center"/>
+                        <ImageView
+                            android:id="@+id/iv_home2"
+                            android:src="@drawable/menu2"
+                            android:scaleType="fitXY"
+                            android:layout_width="250dp"
+                            android:layout_height="150dp"
+                            android:layout_gravity="center"/>
+                        <ImageView
+                            android:id="@+id/iv_home3"
+                            android:src="@drawable/menu3"
+                            android:scaleType="fitXY"
+                            android:layout_width="250dp"
+                            android:layout_height="150dp"
+                            android:layout_gravity="center"/>
+                    </ViewFlipper>
+                    <ImageButton
+                        android:id="@+id/ib_next"
+                        android:src="@drawable/ic_next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_food"
+                        android:paddingLeft="25dp"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Today\'s Food Recommendation"
+                        android:textColor="@color/dark_brown"
+                        android:textSize="19sp"
+                        android:paddingLeft="10dp"
+                        />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:id="@+id/home_food"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_drink_"
+                        android:paddingLeft="20dp"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Today\'s Drink Recommendation"
+                        android:textSize="19sp"
+                        android:textColor="@color/dark_brown"
+                        android:paddingLeft="5dp"
+                        />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:id="@+id/home_drink"/>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
         android:layout_width="wrap_content"

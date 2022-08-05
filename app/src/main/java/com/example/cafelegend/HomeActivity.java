@@ -187,10 +187,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         intent.putExtra("username", username);
         intent.putExtra("food", foodVector.get(position));
-//        intent.putExtra("foodName", foodVector.get(position).getFoodName());
-//        intent.putExtra("foodPrice", foodVector.get(position).getFoodPrice());
-//        intent.putExtra("foodDesc", foodVector.get(position).getDescription());
-//        intent.putExtra("foodImage", foodVector.get(position).getFoodImage());
         startActivity(intent);
     }
 }
