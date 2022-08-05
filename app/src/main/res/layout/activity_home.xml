@@ -8,10 +8,15 @@
     android:background="@color/cream"
     android:orientation="vertical">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
 
         <include
             layout="@layout/toolbar"/>
@@ -24,10 +29,12 @@
             android:textSize="20dp"
             android:text="Welcome, "
             android:textColor="@color/black"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"/>
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -142,7 +149,7 @@
                 android:layout_gravity="center"
                 android:id="@+id/home_drink"/>
         </LinearLayout>
-
+    </ScrollView>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
         android:layout_width="wrap_content"
