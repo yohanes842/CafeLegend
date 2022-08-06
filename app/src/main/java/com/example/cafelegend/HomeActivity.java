@@ -130,16 +130,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     private void loadData() {
         foodVector = new Vector<>();
-        foodVector.add(new Food("Asparagus Ribbon Crostini", "Serving ribbons of asparagus on top of baguette slices turns it from a side dish into a spring-ready finger food. Fresh mint helps make it even more colorful.", 35000, R.drawable.asparagus_ribbon_crostini));
         foodVector.add(new Food("Warm Cheese Box Bites", "Move over cheese straws! These cheesy bites aren't quite crackers, puffs, or straws. They are just as tasty though.", 21000, R.drawable.warm_cheese_box_bites));
-        foodVector.add(new Food("Grilled Chicken With Fresh Cherry Salsa", "Juicy grilled chicken breasts, topped with a delicious ruby-red cherry salsa, made from the season’s best local cherries. Quick, easy and super yummy, this the ultimate summer plate!", 49000, R.drawable.grilled_chicken));
-    }
+        foodVector.add(new Food("Smoked Beef Quiche", "A savory quiche pie made from Smoked Beef and Cheese", 38000, R.drawable.smoked_beef_quiche));
+        foodVector.add(new Food("Beef Sausage & Cheese Croissant", " A New York style bagel topped with Asiago cheese, poppy and sesame seeds, onion and garlic.", 37000, R.drawable.beef_sausage_and_cheese_croissants));    }
     private void loadData2() {
         drinkVector = new Vector<>();
-        drinkVector.add(new Food("Iced caramel Macchiato", "We combine our rich, full-bodied espresso with vanilla-flavored syrup, milk and ice, then top it off with a caramel drizzle for an oh-so-sweet finish.", 35000, R.drawable.iced_caramel_macchiato));
-        drinkVector.add(new Food("Iced Latte", "Small-lot espresso combined with milk and served over ice creates perfectly handcrafted sips of cool.", 23000, R.drawable.iced_latte));
-        drinkVector.add(new Food("Kiwi-StarFruit Refreshers", "Starfruit- and kiwi-flavored juice and real kiwi fruit pieces shaken with ice. Deliciously refreshing.", 27000, R.drawable.kiwi_starfruit));
-    }
+        drinkVector.add(new Food("Earl Grey Tea", "We take a strong black tea base and add the essence of bergamot, a citrus fruit with subtle lemon and floral lavender notes, to create this aromatically awesome tea flavor.", 18000, R.drawable.earl_grey_tea));
+        drinkVector.add(new Food("Hot Chocolate", "Steamed milk and mocha sauce topped with sweetened whipped cream and a chocolate-flavored drizzle. A timeless classic made to sweeten your spirits.", 25000, R.drawable.hot_choco));
+        drinkVector.add(new Food("Pumpkin Spice Latte", "Our signature espresso and steamed milk with the celebrated flavor combination of pumpkin, cinnamon, nutmeg and clove. Enjoy it topped with whipped cream and real pumpkin-pie spices.", 35000, R.drawable.pumpkin_spice_latte));    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -49,7 +49,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         Food food = foodVector.get(position);
         BigDecimal formatPrice = new BigDecimal(food.getFoodPrice()).movePointLeft(3);
         holder.tvfoodname.setText(food.getFoodName());
-        holder.tvfoodprice.setText("Rp. " + formatPrice + ",-");
+//        holder.tvfoodprice.setText("Rp. " + formatPrice + ",-");
         holder.img.setImageDrawable(holder.itemView.getContext().getDrawable(food.getFoodImage()));
     }
 
@@ -67,7 +67,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
             super(itemView);
 
             tvfoodname = itemView.findViewById(R.id.food_name);
-            tvfoodprice = itemView.findViewById(R.id.food_price);
+//            tvfoodprice = itemView.findViewById(R.id.food_price);
             img = itemView.findViewById(R.id.food_img);
             this.onEventListener = onEventListener;
 
