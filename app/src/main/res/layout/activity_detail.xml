@@ -45,7 +45,8 @@
             android:id="@+id/detail_image"
             android:layout_width="207dp"
             android:layout_height="207dp"
-            android:src="@drawable/logo"/>
+            android:src="@drawable/logo"
+            android:scaleType="centerCrop"/>
         <TextView
             android:id="@+id/foodName_TV"
             android:layout_width="wrap_content"
