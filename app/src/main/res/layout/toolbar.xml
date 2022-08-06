@@ -6,6 +6,8 @@
     android:layout_height="wrap_content"
     app:navigationIcon="@drawable/ic_side_menu"
     android:paddingVertical="7dp"
+    android:background="@color/cream"
+    android:elevation="20dp"
     >
 
     <ImageView

@@ -134,6 +134,7 @@
         android:elevation="40dp"
         app:itemIconTint="@color/dark_brown"
         app:itemIconSize="31dp"
+        app:itemTextColor="@color/dark_brown"
         android:backgroundTint="@color/cream"
         />
 
