@@ -1,6 +1,5 @@
 package com.example.cafelegend;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -8,20 +7,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.cafelegend.adapter.HomeAdapter;
 import com.example.cafelegend.model.Food;
-import com.google.android.material.navigation.NavigationView;
-
 import java.math.BigDecimal;
-import java.util.Vector;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -31,7 +20,7 @@ public class DetailActivity extends AppCompatActivity {
     Button order_btn, back_btn;
 
     Bundle extras;
-    String username, foodName, foodDesc;
+    String username, foodName, foodDesc, stringPrice;
     long foodPrice;
     BigDecimal formatPrice;
     int foodImage;
@@ -44,6 +33,8 @@ public class DetailActivity extends AppCompatActivity {
         foodName =  detail_food.getFoodName();
         foodPrice =  detail_food.getFoodPrice();
         formatPrice = new BigDecimal(foodPrice).movePointLeft(3);
+        stringPrice = "Rp. " + formatPrice + ",-";
+
         foodDesc =  detail_food.getDescription();
         foodImage = detail_food.getFoodImage();
 
@@ -57,7 +48,7 @@ public class DetailActivity extends AppCompatActivity {
 
         foodImage_IV.setImageDrawable(this.getDrawable(foodImage));
         foodName_TV.setText(foodName);
-        foodPrice_TV.setText("Rp. " + String.valueOf(formatPrice) + ",-");
+        foodPrice_TV.setText(stringPrice);
         foodDesc_TV.setText(foodDesc);
 
         setEventListener();
@@ -92,9 +83,7 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     void setBackEvent(){
-        back_btn.setOnClickListener(x -> {
-            onBackPressed();
-        });
+        back_btn.setOnClickListener(x -> onBackPressed());
     }
 
     void createDialog(String msg){
@@ -107,12 +96,7 @@ public class DetailActivity extends AppCompatActivity {
         // Set Cancelable false
         builder.setCancelable(false);
 
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
-                            }
-                        });
+        builder.setPositiveButton("OK", (dialog, which) -> dialog.cancel());
 
         AlertDialog alertDialog = builder.create();
         alertDialog.show();

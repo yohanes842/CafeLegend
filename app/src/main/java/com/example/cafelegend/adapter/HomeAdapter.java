@@ -20,15 +20,10 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
     private Context context;
     private Vector<Food> foodVector;
-    private OnEventListener mOnEventListener;
+    private final OnEventListener mOnEventListener;
 
     public HomeAdapter(Context context, Vector<Food> foodVector, OnEventListener onEventListener) {
         this.context = context;
-        this.foodVector = foodVector;
-        this.mOnEventListener = onEventListener;
-    }
-
-    public HomeAdapter(Vector<Food> foodVector, OnEventListener onEventListener) {
         this.foodVector = foodVector;
         this.mOnEventListener = onEventListener;
     }
@@ -47,7 +42,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull HomeAdapter.ViewHolder holder, int position) {
         Food food = foodVector.get(position);
-        BigDecimal formatPrice = new BigDecimal(food.getFoodPrice()).movePointLeft(3);
+//        BigDecimal formatPrice = new BigDecimal(food.getFoodPrice()).movePointLeft(3);
         holder.tvfoodname.setText(food.getFoodName());
 //        holder.tvfoodprice.setText("Rp. " + formatPrice + ",-");
         holder.img.setImageDrawable(holder.itemView.getContext().getDrawable(food.getFoodImage()));

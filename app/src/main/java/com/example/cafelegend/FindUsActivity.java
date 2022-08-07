@@ -1,5 +1,6 @@
 package com.example.cafelegend;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -49,6 +50,7 @@ public class FindUsActivity extends AppCompatActivity implements NavigationView.
         setupDrawer();
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Intent intent;
