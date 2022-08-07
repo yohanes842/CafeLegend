@@ -34,20 +34,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:textSize="25dp"
-                    android:text="About Us"
+                    android:textSize="27sp"
+                    android:text="@string/about_us"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
                     />
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="15px"/>
+                    android:layout_height="20dp"/>
 
                 <TextView
                     android:id="@+id/welcome_TV"
                     android:layout_width="321dp"
                     android:layout_height="wrap_content"
-                    android:gravity="left"
+                    android:gravity="start"
                     android:justificationMode="inter_word"
-                    android:text="@string/about_us"
+                    android:text="@string/about_us_desc"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -60,58 +62,34 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <LinearLayout
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="left">
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_instagram"
-                            android:layout_marginEnd="10dp"
-                            android:layout_gravity="center">
-                        </ImageView>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="\@CaféLegend"
-                            android:textColor="@color/black"
-                            android:textSize="18sp"/>
-                    </LinearLayout>
-                    <LinearLayout
+                        android:drawableStart="@drawable/ic_instagram"
+                        android:drawablePadding="10dp"
+                        android:text="@string/tag_instagram_cafeLegend"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:gravity="center_vertical"/>
+                    <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_whatsapp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_gravity="center">
-                        </ImageView>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="0812-1122-2233"
-                            android:textColor="@color/black"
-                            android:textSize="18sp"/>
-                    </LinearLayout>
-                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_whatsapp"
+                        android:drawablePadding="10dp"
+                        android:text="@string/whatsapp_number"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:gravity="center_vertical"/>
+                    <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_location"
-                            android:layout_marginEnd="10dp"
-                            android:layout_gravity="center">
-                        </ImageView>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Jenderal Sudirman Street Number 15A-C, SCBD, South Jakarta"
-                            android:textColor="@color/black"
-                            android:textSize="18sp"/>
-                    </LinearLayout>
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_location"
+                        android:drawablePadding="10dp"
+                        android:text="@string/address_cafeLegend"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:gravity="center_vertical"/>
+
                 </LinearLayout>
 
                 <Space

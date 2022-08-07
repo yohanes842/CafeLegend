@@ -46,13 +46,14 @@
             android:layout_width="207dp"
             android:layout_height="207dp"
             android:src="@drawable/logo"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/cafe_legend_logo"/>
         <TextView
             android:id="@+id/foodName_TV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="Food Name"
+            android:text="@string/detail_name"
             android:textStyle="bold"
             android:textSize="20sp"
             android:textColor="@color/brown"
@@ -62,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="Food Price"
+            android:text="@string/detail_price"
             android:textStyle="bold"
             android:textSize="18sp"
             android:textColor="@color/brown"
@@ -72,7 +73,7 @@
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:justificationMode="inter_word"
-            android:text="Description"
+            android:text="@string/description"
             android:textSize="15sp"
             android:textColor="@color/black"/>
 
@@ -86,7 +87,8 @@
         android:layout_width="137dp"
         android:layout_height="wrap_content"
         android:background="@drawable/custom_quantity_input"
-        android:hint="Quantity"
+        android:hint="@string/quantity"
+        android:autofillHints="@string/quantity"
         android:textAlignment="center"
         android:inputType="number"
         android:textSize="17sp"
@@ -110,7 +112,7 @@
         android:layout_width="186dp"
         android:layout_height="53dp"
         android:background="@drawable/rounded_order_button"
-        android:text="Order"
+        android:text="@string/order"
         android:textSize="17sp"
         android:textColor="@color/white" />
 
