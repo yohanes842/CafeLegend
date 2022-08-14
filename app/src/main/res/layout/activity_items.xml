@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/apk/tools"
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cream"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:content = ".ItemActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,10 +23,31 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="20sp"
-            android:text="This is items page ..."
+            android:text="MENU"
             android:textColor="@color/black"/>
 
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:background="@color/cream"
+
+            />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+        />
+
+
+
+
+
     </LinearLayout>
+
+
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
@@ -38,5 +61,7 @@
         app:itemIconSize="31dp"
         android:backgroundTint="@color/cream"
         />
+
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
