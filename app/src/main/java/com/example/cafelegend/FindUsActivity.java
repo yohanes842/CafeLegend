@@ -1,5 +1,6 @@
 package com.example.cafelegend;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -49,6 +50,7 @@ public class FindUsActivity extends AppCompatActivity implements NavigationView.
         setupDrawer();
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Intent intent;
@@ -58,13 +60,11 @@ public class FindUsActivity extends AppCompatActivity implements NavigationView.
                 intent = new Intent(this, HomeActivity.class);
                 intent.putExtra("username", username);
                 startActivity(intent);
-                finish();
                 break;
             case R.id.nav_items:
                 intent = new Intent(this, ItemsActivity.class);
                 intent.putExtra("username", username);
                 startActivity(intent);
-                finish();
                 break;
             case R.id.nav_log_out:
                 intent = new Intent(this, LoginActivity.class);
@@ -72,7 +72,6 @@ public class FindUsActivity extends AppCompatActivity implements NavigationView.
                         "Log Out Successful",
                         Toast.LENGTH_SHORT).show();
                 startActivity(intent);
-                finish();
                 break;
             default:
         }

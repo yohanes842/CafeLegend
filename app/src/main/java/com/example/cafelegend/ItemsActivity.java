@@ -101,13 +101,11 @@ public class ItemsActivity extends AppCompatActivity implements NavigationView.O
                 intent = new Intent(this, HomeActivity.class);
                 intent.putExtra("username", username);
                 startActivity(intent);
-                finish();
                 break;
             case R.id.nav_find_us:
                 intent = new Intent(this, FindUsActivity.class);
                 intent.putExtra("username", username);
                 startActivity(intent);
-                finish();
                 break;
             case R.id.nav_log_out:
                 intent = new Intent(this, LoginActivity.class);
@@ -115,7 +113,6 @@ public class ItemsActivity extends AppCompatActivity implements NavigationView.O
                         "Log Out Successful",
                         Toast.LENGTH_SHORT).show();
                 startActivity(intent);
-                finish();
                 break;
             default:
         }
