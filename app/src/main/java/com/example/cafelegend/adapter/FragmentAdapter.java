@@ -12,7 +12,6 @@ import com.example.cafelegend.Fragment3;
 
 public class FragmentAdapter extends FragmentStateAdapter {
 
-
     public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
     }

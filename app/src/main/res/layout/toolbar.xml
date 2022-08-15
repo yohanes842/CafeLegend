@@ -7,7 +7,6 @@
     app:navigationIcon="@drawable/ic_side_menu"
     android:paddingVertical="7dp"
     android:layout_marginBottom="17dp"
-    android:background="@color/light_cream"
     android:elevation="20dp"
     >
 

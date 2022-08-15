@@ -31,4 +31,6 @@
     <string name="prev_button">carousel_previous_button</string>
     <string name="carousel">carousel</string>
     <string name="next_button">carousel_next_button</string>
+    <string name="food_image">food image</string>
+    <string name="MENU">MENU</string>
 </resources>

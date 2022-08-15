@@ -49,7 +49,7 @@
             android:layout_height="207dp"
             android:src="@drawable/logo"
             android:scaleType="centerCrop"
-            android:contentDescription="@string/cafe_legend_logo"/>
+            android:contentDescription="@string/food_image"/>
         <TextView
             android:id="@+id/foodName_TV"
             android:layout_width="wrap_content"
