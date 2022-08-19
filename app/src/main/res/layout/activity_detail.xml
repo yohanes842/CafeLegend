@@ -52,7 +52,7 @@
             android:contentDescription="@string/food_image"/>
         <TextView
             android:id="@+id/foodName_TV"
-            android:layout_width="wrap_content"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:text="@string/detail_name"
@@ -74,7 +74,7 @@
             android:id="@+id/foodDesc_TV"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:justificationMode="inter_word"
+            android:textAlignment="center"
             android:text="@string/description"
             android:textSize="15sp"
             android:textColor="@color/black"/>
