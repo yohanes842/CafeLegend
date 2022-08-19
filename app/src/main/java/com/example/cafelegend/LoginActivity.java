@@ -68,8 +68,10 @@ public class LoginActivity extends AppCompatActivity {
                 passwordErr.setText("Password must be filled");
                 passwordErr.setVisibility(View.VISIBLE);
                 errors = true;
-            } else if(!password.matches("^[a-zA-Z0-9]*$")){
-                passwordErr.setText("Password must only contains letter or number");
+            } else if(!(password.matches(".*[a-zA-Z].*")
+                    && password.matches(".*[0-9].*")
+                && password.matches("[a-zA-Z0-9]*"))){
+                passwordErr.setText("Password must only contains letter and number");
                 passwordErr.setVisibility(View.VISIBLE);
                 errors = true;
             } else{
